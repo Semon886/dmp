@@ -60,7 +60,6 @@ function unset_tty() {
 function prompt_user() {
     clear
     echo_green "饥荒管理平台(DMP)"
-    echo_green "--- https://github.com/miracleEverywhere/dst-management-platform-api ---"
     echo_yellow "————————————————————————————————————————————————————————————"
     echo_green "[0]: 下载并启动服务(Download and start the service)"
     echo_yellow "————————————————————————————————————————————————————————————"
@@ -225,7 +224,7 @@ function get_current_version() {
 function get_latest_version() {
     check_jq
     check_curl
-    LATEST_VERSION=$(curl -s https://api.github.com/repos/miracleEverywhere/dst-management-platform-api/releases/latest | jq -r .tag_name)
+    LATEST_VERSION=$(curl -s https://api.github.com/repos/Semon886/dmp/releases/latest | jq -r .tag_name)
     if [[ -z "$LATEST_VERSION" ]]; then
         echo_red "无法获取最新版本号，请检查网络连接或GitHub API (Failed to fetch the latest version, please check network or GitHub API)"
         exit 1
